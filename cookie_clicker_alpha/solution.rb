@@ -5,20 +5,15 @@ class Cookie_factory
     @f = input_arr[1].to_f
     @x = input_arr[2].to_f
     @cookie_per_sec = 2
-    @cookies = 0
     @previous_time_taken_by_waits = []
     @deltas = []
   end
 
   attr_reader :cost, :x, :f, :cookie_per_sec
-  attr_accessor :cookies, :previous_time_taken_by_waits, :deltas
+  attr_accessor :previous_time_taken_by_waits, :deltas
 
   def inc_cookie_per_sec
     @cookie_per_sec += @f
-  end
-
-  def reset_cookies
-    @cookies = 0
   end
 
   def push_delta(current_wait_time)
@@ -29,7 +24,7 @@ end
 i_dir = '/Users/mavenhive/Public/codejam/cookie_clicker_alpha/inputs'
 o_dir = '/Users/mavenhive/Public/codejam/cookie_clicker_alpha/outputs'
 outputs = []
-inputs = File.readlines(i_dir + '/A-small-attempt0.in').drop(1).to_a
+inputs = File.readlines(i_dir + '/A-test-attempt0.in').drop(1).to_a
 count = 0
 inputs.each do |inp|
   data = Cookie_factory.new(inp)
@@ -55,7 +50,7 @@ inputs.each do |inp|
 end
 
 #Write output to file
-File.open(o_dir + '/A-small-attempt0.out', 'w+') do |file|
+File.open(o_dir + '/A-test-attempt0.out', 'w+') do |file|
   outputs.each_with_index do |element, index|
     index += 1
     file.puts('Case #'+ index.to_s + ':  ' + element.to_s)
