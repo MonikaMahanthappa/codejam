@@ -1,7 +1,7 @@
 i_dir = '/Users/mavenhive/Public/codejam/magic_trick/inputs'
 o_dir = '/Users/mavenhive/Public/codejam/magic_trick/outputs'
 output = []
-inputs = File.readlines(i_dir + '/A-small-practice.in').drop(1).each_slice(10).to_a
+inputs = File.readlines(i_dir + '/A-small-attempt0.in').drop(1).each_slice(10).to_a
 inputs.each do |first_choice, row_1, row_2, row_3, row_4, sec_choice, sec_row_1, sec_row_2, sec_row_3, sec_row_4|
   first_arrangement = [row_1, row_2, row_3, row_4]
   second_arrangement = [sec_row_1, sec_row_2, sec_row_3, sec_row_4]
@@ -18,7 +18,6 @@ inputs.each do |first_choice, row_1, row_2, row_3, row_4, sec_choice, sec_row_1,
   output.push(voila)
 end
 
-puts output
 
 #Write output to file
 File.open(o_dir + '/A-small-practice.out', 'w+') do |file|
