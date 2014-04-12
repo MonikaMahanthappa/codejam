@@ -1,5 +1,5 @@
-i_dir = '/Users/mavenhive/Public/codejam/skeleton/inputs'
-o_dir = '/Users/mavenhive/Public/codejam/skeleton/outputs'
+i_dir = '/Users/mavenhive/Public/codejam/deceitful_war/inputs'
+o_dir = '/Users/mavenhive/Public/codejam/deceitful_war/outputs'
 output = []
 inputs = File.readlines(i_dir + '/A-large-practice.in').drop(1).each_slice(3).to_a
 inputs.each do |credit, length, inps|
