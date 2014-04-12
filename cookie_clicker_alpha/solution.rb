@@ -24,8 +24,7 @@ end
 i_dir = '/Users/mavenhive/Public/codejam/cookie_clicker_alpha/inputs'
 o_dir = '/Users/mavenhive/Public/codejam/cookie_clicker_alpha/outputs'
 outputs = []
-inputs = File.readlines(i_dir + '/A-test-attempt0.in').drop(1).to_a
-count = 0
+inputs = File.readlines(i_dir + '/A-small-attempt0.in').drop(1).to_a
 inputs.each do |inp|
   data = Cookie_factory.new(inp)
   sec = 0
@@ -50,7 +49,7 @@ inputs.each do |inp|
 end
 
 #Write output to file
-File.open(o_dir + '/A-test-attempt0.out', 'w+') do |file|
+File.open(o_dir + '/A-small-attempt0.out', 'w+') do |file|
   outputs.each_with_index do |element, index|
     index += 1
     file.puts('Case #'+ index.to_s + ':  ' + element.to_s)
