@@ -2,6 +2,9 @@ i_dir = '/Users/mavenhive/Public/codejam/store_credit/inputs'
 o_dir = '/Users/mavenhive/Public/codejam/store_credit/outputs'
 output = []
 inputs = File.readlines(i_dir + '/A-large-practice.in').drop(1).each_slice(3).to_a
+inputs.each do |credit, length, inps|
+
+end
 
 #Write output to file
 File.open(o_dir + '/A-large-practice.out', 'w+') do |file|
