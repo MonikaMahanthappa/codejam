@@ -77,14 +77,14 @@ end
 
 i_dir = '/Users/mavenhive/Public/codejam/deceitful_war/inputs'
 o_dir = '/Users/mavenhive/Public/codejam/deceitful_war/outputs'
-original_inputs = File.readlines(i_dir + '/A-test-practice.in').drop(1).each_slice(3).to_a
+original_inputs = File.readlines(i_dir + '/D-small-attempt0.in').drop(1).each_slice(3).to_a
 war = War.new
 honest_war_output = war.war(original_inputs)
 deceitful_war_output = war.deceitful_war(original_inputs)
 
 
 #Write output to file
-File.open(o_dir + '/A-test-practice.out', 'w+') do |file|
+File.open(o_dir + '/D-small-practice.out', 'w+') do |file|
 index = 0
   deceitful_war_output.zip(honest_war_output).each do |cheated_point, honest_point|
     index += 1
