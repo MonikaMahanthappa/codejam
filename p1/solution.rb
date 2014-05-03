@@ -1,20 +1,24 @@
-def flip(input_array, index)
+def flip(input_array, indexes)
   input_array.each_with_index do |inp, ar_index|
     inp = inp.split('')
-    if inp[index] == '1'
-      inp[index] = 0
-    else
-      inp[index] = 1
+    #puts "inds: #{indexes}"
+    indexes.each do |index|
+      if inp[index] == '1'
+        inp[index] = 0
+      else
+        inp[index] = 1
+      end
     end
     input_array[ar_index] = inp.join('')
   end
+  #puts "ina: #{input_array}"
   input_array
 end
 
 i_dir = '/Users/mavenhive/Public/codejam/p1/inputs'
 o_dir = '/Users/mavenhive/Public/codejam/p1/outputs'
 output = []
-inputs = File.readlines(i_dir + '/A-large-practice.in').drop(1).each_slice(3).to_a
+inputs = File.readlines(i_dir + '/A-small-practice.in').drop(1).each_slice(3).to_a
 inputs.each do |n_l, outlet_inp, device|
   num_devices = n_l.split(' ')[0].to_i
   length = n_l.split(' ')[1].to_i
@@ -28,12 +32,25 @@ inputs.each do |n_l, outlet_inp, device|
     loop_count = 0
     #puts "orb: #{original_outlet}"
     length.times do
+      inner_loop_count = 0
       length.times do
-        outlet = flip(outlet_inp.split(' '), loop_count)
+        #puts "or: #{outlet_inp.split(' ')}"
+        min = loop_count
+        max = inner_loop_count
+        if inner_loop_count < loop_count
+          min = inner_loop_count
+          max = loop_count
+        end
+        range = (min..max).to_a
+        outlet = flip(outlet_inp.split(' '), range)
         if ((outlet-device) + (device-outlet)).empty?
-          count += 1
+          count = (min..max).to_a.length
           break
         end
+        inner_loop_count += 1
+      end
+      if count != 0
+        break
       end
       #puts "or: #{original_outlet}"
       #puts "o: #{outlet} , i: #{loop_count}"
