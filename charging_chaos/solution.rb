@@ -1,3 +1,7 @@
+def xor(a, b)
+  a
+end
+
 def flip(input_array, indexes)
   input_array.each_with_index do |inp, ar_index|
     inp = inp.split('')
@@ -15,8 +19,8 @@ def flip(input_array, indexes)
   input_array
 end
 
-i_dir = '/Users/mavenhive/Public/codejam/p1/inputs'
-o_dir = '/Users/mavenhive/Public/codejam/p1/outputs'
+i_dir = '/Users/mavenhive/Public/codejam/charging_chaos/inputs'
+o_dir = '/Users/mavenhive/Public/codejam/charging_chaos/outputs'
 output = []
 inputs = File.readlines(i_dir + '/A-small-practice.in').drop(1).each_slice(3).to_a
 inputs.each do |n_l, outlet_inp, device|
@@ -44,8 +48,7 @@ inputs.each do |n_l, outlet_inp, device|
         range = (min..max).to_a
         outlet = flip(outlet_inp.split(' '), range)
         if ((outlet-device) + (device-outlet)).empty?
-          count = (min..max).to_a.length
-          break
+            break
         end
         inner_loop_count += 1
       end
