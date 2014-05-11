@@ -29,7 +29,10 @@ because the switches are big and heavy and Misaki doesn't want to flip more than
 
 Input
 
-The first line of the input gives the number of test cases, T. T test cases follow. Each test case consists of three lines. The first line contains two space-separated integers N and L. The second line contains N space-separated strings of length L, representing the initial electric flow from the outlets. The third line also contains N space-separated strings of length L, representing the electric flow required by Shota's devices.
+The first line of the input gives the number of test cases, T. T test cases follow.
+Each test case consists of three lines. The first line contains two space-separated integers N and L.
+The second line contains N space-separated strings of length L, representing the initial electric flow from the outlets.
+The third line also contains N space-separated strings of length L, representing the electric flow required by Shota's devices.
 
 Output
 
